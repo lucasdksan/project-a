@@ -10,9 +10,7 @@ const CountDownProvider = ({children})=>{
     const minutes = Math.floor(time/60);
     const seconds = time % 60;
 
-    function startCountdown(){
-        setIsActive(true);
-    }
+    function startCountdown(){ setIsActive(true); }
 
     function resetCountdown(){
         clearTimeout(countdownTimeout);
@@ -29,21 +27,11 @@ const CountDownProvider = ({children})=>{
         } else if(isActive && time === 0){
             setHasFinished(true);
             setIsActive(false);
-            startNewChallenge();
         }
     },[isActive, time]);
 
     return(
-        <CountDownContext.Provider
-            value={{
-                minutes,
-                seconds,
-                hasFinished,
-                isActive,
-                startCountdown,
-                resetCountdown,
-            }}
-        >
+        <CountDownContext.Provider value={{ minutes, seconds, hasFinished, isActive, startCountdown, resetCountdown, }} >
             { children }
         </CountDownContext.Provider>
     );
