@@ -1,12 +1,11 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import styles from "../styles/screens/Home";
+import CountDown from "../components/CountDown";
 
 const Home = ()=>{
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>
-                Apenas um texto
-            </Text>
+            <CountDown />
         </View>
     );
 }
