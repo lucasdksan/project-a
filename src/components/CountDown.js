@@ -4,7 +4,7 @@ import styles from "../styles/components/CountDown";
 import { CountDownContext } from "../contexts/countdown/CountDownContext";
 
 const CountDown = () => {
-    const { minutes, seconds, hasFinished, isActive, resetCountdown, startCountdown } = useContext(CountDownContext);
+    const { minutes, seconds, hasFinished, startCountdown } = useContext(CountDownContext);
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
     const [secondsLeft, secondsRight] = String(seconds).padStart(2, '0').split('');
 
@@ -31,14 +31,10 @@ const CountDown = () => {
             </View>
             {
                 hasFinished ? (
-                    <Button title="Ciclo Concluído!" />
+                    <Text>Concluído</Text>
                 ) : (
                     <>
-                        {isActive ? (
-                            <Button title="Abandonar Ciclo" onPress={resetCountdown} />
-                        ) : (
-                            <Button title="Iniciar um ciclo" onPress={startCountdown} />
-                        )}
+                        <Button title="Iniciar um ciclo" onPress={startCountdown} />
                     </>
                 )
             }

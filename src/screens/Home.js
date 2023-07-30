@@ -1,12 +1,12 @@
-import { View } from "react-native";
+import { SafeAreaView } from "react-native";
 import styles from "../styles/screens/Home";
-import CountDown from "../components/CountDown";
+import NotFoundList from "../components/NotFoundList";
 
 const Home = ()=>{
     return(
-        <View style={styles.container}>
-            <CountDown />
-        </View>
+        <SafeAreaView style={styles.container}>
+            <NotFoundList />
+        </SafeAreaView>
     );
 }
 

@@ -1,16 +1,10 @@
-import { StatusBar } from "expo-status-bar";
-import { useFonts, Rajdhani_300Light, Rajdhani_400Regular, Rajdhani_500Medium, Rajdhani_600SemiBold, Rajdhani_700Bold } from "@expo-google-fonts/rajdhani";
-import Home from "./src/screens/Home";
+import { StatusBar } from "react-native";
 import CountDownProvider from "./src/contexts/countdown/CountDownProvider";
+import Routes from "./src/routes";
+import loadedFonts from "./src/libs/loadedFonts";
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    Rajdhani_300Light, 
-    Rajdhani_400Regular, 
-    Rajdhani_500Medium, 
-    Rajdhani_600SemiBold, 
-    Rajdhani_700Bold
-  });
+  const { fontsLoaded } = loadedFonts();
   
   if (!fontsLoaded) {
     return null;
@@ -18,9 +12,9 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style="auto" />
+      <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent/>
       <CountDownProvider>
-        <Home />
+        <Routes />
       </CountDownProvider>
     </>
   );
