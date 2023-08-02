@@ -1,4 +1,4 @@
-# Projeto A (Cronos)
+# 🧪 Projeto A (Cronos) ⏲
 
 ## Descrição
 
