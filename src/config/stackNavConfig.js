@@ -1,6 +1,6 @@
 import { colors, fonts } from "../styles/themes/index";
 
-const tabNavConfig = {
+const stackNavConfig = {
     tabBarStyle: {
         backgroundColor: colors.darkGrey,
         height: 55
@@ -19,4 +19,4 @@ const tabNavConfig = {
     }
 }
 
-export default tabNavConfig;
+export default stackNavConfig;
