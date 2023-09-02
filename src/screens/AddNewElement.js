@@ -1,4 +1,5 @@
-import { SafeAreaView, TextInput, View, Text, KeyboardAvoidingView } from "react-native";
+import { RectButton } from "react-native-gesture-handler";
+import { SafeAreaView, TextInput, View, Text } from "react-native";
 import Checkbox from "expo-checkbox";
 import styles from "../styles/screens/AddNewElement";
 
@@ -6,11 +7,15 @@ const AddNewElement = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View>
-                <Text>Nome do Elemento</Text>
+                <Text style={styles.text}>Nome do Elemento</Text>
                 <TextInput />
             </View>
             <View>
-                <Text>Horas disponíveis</Text>
+                <Text style={styles.text}>Horas disponíveis</Text>
+                <TextInput />
+            </View>
+            <View>
+                <Text style={styles.text}>Anotações</Text>
                 <TextInput />
             </View>
             <View>
@@ -19,34 +24,46 @@ const AddNewElement = () => {
                 </View>
                 <View>
                     <View>
-                        <Checkbox />
                         <Text>Segunda</Text>
+                        <Checkbox />
                     </View>
                     <View>
-                        <Checkbox />
                         <Text>Terça</Text>
+                        <Checkbox />
                     </View>
                     <View>
-                        <Checkbox />
                         <Text>Quarta</Text>
+                        <Checkbox />
                     </View>
                     <View>
-                        <Checkbox />
                         <Text>Quinta</Text>
+                        <Checkbox />
                     </View>
                     <View>
-                        <Checkbox />
                         <Text>Sexta</Text>
+                        <Checkbox />
                     </View>
                     <View>
-                        <Checkbox />
                         <Text>Sabado</Text>
+                        <Checkbox />
                     </View>
                     <View>
-                        <Checkbox />
                         <Text>Domingo</Text>
+                        <Checkbox />
                     </View>
                 </View>
+            </View>
+            <View>
+                <Text>Prioridade</Text>
+                <Checkbox />
+            </View>
+            <View>
+                <RectButton>
+                    <Text>CANCELAR</Text>
+                </RectButton>
+                <RectButton>
+                    <Text>CONFIRMAR</Text>
+                </RectButton>
             </View>
         </SafeAreaView>
     );
